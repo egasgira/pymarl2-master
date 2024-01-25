@@ -145,7 +145,7 @@ class ParallelRunner:
 
             # Receive data back for each unterminated env
             for idx, parent_conn in enumerate(self.parent_conns):
-                if not terminated[idx]:
+                if not terminated[idx]: ##Default not, and updated for each worker
                     data = parent_conn.recv()
                     # Remaining data for this current timestep
                     post_transition_data["reward"].append((data["reward"],))
@@ -234,9 +234,10 @@ def env_worker(remote, env_fn):
             # Return the observations, avail_actions and state to make the next action
             state = env.get_state()
             avail_actions = env.get_avail_actions()
+
             obs = env.get_obs()
             remote.send({
-                # Data for the next timestep needed to pick an action
+                # Data for the next timestep needed to pick an action #np.argmax(obs[0][-10:]), np.argmax(obs[1][-10:]), reward
                 "state": state,
                 "avail_actions": avail_actions,
                 "obs": obs,

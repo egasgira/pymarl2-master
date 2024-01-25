@@ -142,6 +142,10 @@ class NQLearner:
             # print estimated matrix
             if self.args.env == "one_step_matrix_game":
                 print_matrix_status(batch, self.mixer, mac_out)
+            
+            #if self.args.env == "city_navigation":
+
+
 
         # return info
         info = {}

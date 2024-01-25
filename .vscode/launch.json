@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "name": "main.py config",
+            "type": "python",
+            "request": "launch",
+            "program": "src/main.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "args": ["--config=qmix", "--env-config=city_navigation"]
+            //"args": ["--config=qmix", "--env-config=one_step_matrix_game"]
+        }
+    ]
+}

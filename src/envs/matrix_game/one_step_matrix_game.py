@@ -4,7 +4,7 @@ import numpy as np
 import torch as th
 
 # this non-monotonic matrix can be solved by qmix
-payoff_values = [[12, -0.1, -0.1],
+payoff_values =   [[12, -0.1, -0.1],
                     [-0.1, 0, 0],
                     [-0.1, 0, 0]]
 
